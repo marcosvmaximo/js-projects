@@ -21,6 +21,10 @@
   overflow-x: auto;
 }
 
+#bicicleta .bicicletas-lista h2 {
+    padding-left: 20px;
+}
+
 .bicicletas-lista li {
   min-width: 280px;
 }
@@ -54,6 +58,10 @@
 .bicicletas-lista a:hover img {
   max-width: 102%;
   transition: 0.8s;
+}
+
+#bicicleta .bicicletas-lista a:hover img {
+    max-width: 100%;
 }
 
 .bicicletas-lista a:hover h3::before {
