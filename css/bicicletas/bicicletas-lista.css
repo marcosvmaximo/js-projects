@@ -1,5 +1,7 @@
 .bicicletas-lista {
   padding: 60px 0 120px 0;
+  margin-bottom: 20px;
+  max-height: 717.604px; /* para fazer a imagem parar de fazer o container transbordar o tamanho dele */
 }
 
 .bicicletas-lista h2 {
@@ -49,6 +51,11 @@
   transition: width 0.4s;
 }
 
+.bicicletas-lista a:hover img {
+  max-width: 102%;
+  transition: 0.8s;
+}
+
 .bicicletas-lista a:hover h3::before {
   width: 24px;
 }
@@ -64,5 +71,9 @@
 
   .bicicletas-lista ul {
     gap: 20px;
+  }
+
+  .bicicletas-lista a:hover img {
+    max-width: 100%;
   }
 }
