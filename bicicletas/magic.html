@@ -7,10 +7,15 @@
     <title>Magic | Bikcraft</title>
     <meta name="description" content="Com um toque de magica a Magic é uma bike super poderosa, modelo elétrico de alta performace e desempenho, você irá se surpreender.">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+    <link rel="preload" href="../css/style.min.css" as="style">
+    <link rel="stylesheet" href="../css/style.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:wght@300;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body id="bicicleta">
@@ -45,7 +50,7 @@
             <div class="bicicleta-conteudo">
                 <p class="font-2-l cor-5">A Magic Migth é a melhor Bikcraftr já criada pela nossa equipe. Ela vem equipada com os melhores acessórios, o que garante maior velocidade.</p>
                 <div class="bicicleta-comprar">
-                    <a class="botao" href="../orcamento.html">Comprar Agora</a>
+                    <a class="botao" href="../orcamento.html?tipo=bikcraft&produto=magic">Comprar Agora</a>
                     <span class="font-2-xs cor-6"><img src="../img/icones/entrega.svg">entrega em 5 dias</span>
                     <span class="font-2-xs cor-6"><img src="../img/icones/estoque.svg">18 em estoque</span>
                 </div>
@@ -158,6 +163,7 @@
             <p class="footer-copy font-2-m cor-6">Bikcraft &copy; Alguns direitos reservados.</p>
         </div>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

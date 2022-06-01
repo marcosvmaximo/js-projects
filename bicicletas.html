@@ -7,18 +7,21 @@
     <title>Nossas Bicicletas | Bikcraft</title>
     <meta name="description" content="Todas nossas opções de bikes elétricas.">
 
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="stylesheet" href="css/style.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:wght@300;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body id="bicicletas">
     <header class="header-bg">
         <div class="header container">
             <a href="./">
-                <img src="img/bikcraft.svg" width="136" heigth="32"alt="bikcraft">
+                <img src="img/bikcraft.svg" width="136" heigth="32" alt="bikcraft">
             </a>
             <nav aria-label="primaria">
                 <ul class="header-menu font-1-m cor-0">
@@ -38,7 +41,7 @@
             </div>
         </div>
         <div class="bicicletas-bg">
-            <div class="bicicletas container">
+            <div class="bicicletas container fadeInRight" data-anime="500">
                 <div class="bicicletas-imagem">
                     <img src="./img/bicicletas/nimbus.jpg" width="1120" heigth="680" alt="Bicicleta preta">
                     <span class="font-2-m cor-0">R$ 4999</span>
@@ -71,7 +74,7 @@
 
 
         <div class="bicicletas-bg">
-            <div class="bicicletas container">
+            <div class="bicicletas container fadeInRight" data-anime="800">
                 <div class="bicicletas-imagem">
                     <img src="./img/bicicletas/magic.jpg" alt="Bicicleta preta">
                     <span class="font-2-m cor-0">R$ 2499</span>
@@ -103,7 +106,7 @@
         </div>
 
         <div class="bicicletas-bg">
-            <div class="bicicletas container">
+            <div class="bicicletas container fadeInRight" data-anime="1100">
                 <div class="bicicletas-imagem">
                     <img src="./img/bicicletas/nebula.jpg" width="1120" heigth="680" alt="Bicicleta preta">
                     <span class="font-2-m cor-0">R$ 3999</span>
@@ -174,6 +177,8 @@
             <p class="footer-copy font-2-m cor-6">Bikcraft &copy; Alguns direitos reservados.</p>
         </div>
     </footer>
+    <script src="./js/plugins/simple-anime.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
