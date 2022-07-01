@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Gerador de senhas, password, como fazer uma senha, senha boa, gerador">
+  <title>Projeto | Gerador de Senha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="logo">
+    <img src="./assets/logo-nick.svg" alt="">
+  </div>
+
+  <main class="container-generator">
+    <p class="title">Quantas silabas seu nick irá ter?</p>
+    <span class="size" id="size">5</span>
+    <input type="range" class="slide" id="slide" min="2" max="10" value="5" step="2">
+    <button id="button-generator" class="button" onclick="nickGenerator()">Gerar</button>
+  </main>
+
+  <div class="container-nick hidden" id="container-nick" onclick="copyNick()">
+    <span class="title">Nickname gerado:</span>
+    <span class="nick" id="nick">12345</span>
+    <span class="tooltip">Copiar seu nickname.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
