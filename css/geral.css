@@ -36,7 +36,8 @@ body {
   padding: 10px;
 }
 
-.menu li a {
+.menu li a,
+.loginButton {
   display: block;
   padding: 10px;
   margin-right: 10px;
@@ -194,11 +195,14 @@ body {
     grid-column: 1;
   }
   .grid-section {
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 120px 1fr;
     grid-gap: 10px;
   }
   .animais-lista {
     grid-column: 1;
+  }
+  .animais-descricao {
+    font-size: .7rem;
   }
   .faq-lista, .dados, .mapa {
     grid-column: 1 / 3;

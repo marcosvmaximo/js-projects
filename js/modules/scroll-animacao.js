@@ -10,7 +10,9 @@ export default function initAnimationScroll(){
         const sectionTop = section.getBoundingClientRect().top;
         const isSectionVisible = (sectionTop - heightUser) < 0
 
-        if(isSectionVisible) section.classList.add('ativo');
+        if(isSectionVisible) {
+          section.classList.add('ativo');
+        }
       })
     }
   

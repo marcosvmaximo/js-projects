@@ -11,7 +11,6 @@ export default function initModal() {
     
     function clickClose(event) {
       if(event.target === this) toggleModal(event);
-      console.log(event.target === this)
     }
     
     buttonOpen.addEventListener('click', toggleModal);
