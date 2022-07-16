@@ -15,3 +15,5 @@ export default function initOperation() {
     operation.classList.add('aberto')
   }
 }
+
+initOperation()
