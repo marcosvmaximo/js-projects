@@ -20,12 +20,12 @@ body {
   height: 100vh;
   font-family: "Quicksand", sans-serif;
   background: #ededed;
-  color: var(--cor3);
+  color: var(--cor2);
 }
 
 .saved-money {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
   text-align: center;
 }
@@ -36,9 +36,10 @@ body {
   letter-spacing: 2px;
   padding: 10px 5rem;
   margin: 4rem 0;
-  border-radius: 50px;
-  color: var(--cor1);
-  background: var(--cor5);
+  border-radius: 70px;
+  border: 3px solid var(--cor5);
+  color: var(--cor4);
+  background: transparent;
 }
 
 .money p {
@@ -54,31 +55,39 @@ body {
   font-weight: 600;
 }
 
-.choice {
-  max-width: fit-content;
+.choice ul {
+  max-width: max-content;
   margin: 0 auto;
-  background: var(--cor5);
-  color: var(--cor1);
-  border-radius: 50px;
-  cursor: pointer;
-  padding: 0 50px;
+  background: transparent;
+  border: 3px solid var(--cor5);
+  border-radius: 20px;
+  padding: 10px 30px;
+  list-style: none;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .1);
 }
 
-.choice h2 {
+.choice li {
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 1px;
   padding: 15px 0;
   text-align: center;
-
+  cursor: pointer;
+  transition: all 2s ease;
 }
 
-.choice h2 + h2 {
-  border-top: 2px solid #ededed;
+.choice .first {
+  color: var(--cor5);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.choice li + li {
+  border-top: 2px solid var(--cor3);
+  color: var(--cor2);
 }
 
 .hidden {
   display: none;
-  transition: all 2s ease;
 }
 
