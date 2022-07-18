@@ -35,7 +35,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 10px 5rem;
-  margin: 4rem 0;
+  margin: 3rem 0;
   border-radius: 70px;
   border: 3px solid var(--cor5);
   color: var(--cor4);
@@ -55,7 +55,6 @@ span.detail {
 }
 
 .choice {
-  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +122,8 @@ span.detail {
 
 .list-money .sinal {
   display: block;
-  font-size: 5rem;
+  max-height: 90px;
+  font-size: 6rem;
   color: green;
   text-align: center;
   transition: all .4s ease-in-out;
@@ -175,7 +175,7 @@ span.detail {
   letter-spacing: 2px;
   border-radius: 20px;
   border: none;
-  margin: 10px;
+  margin: 30px 10px;
   color: var(--cor5);
   cursor: pointer;
   transition: all .4s ease-in-out;
