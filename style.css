@@ -42,26 +42,48 @@ body {
   background: transparent;
 }
 
-.money p {
+span.money {
  color: #06BF19;
- font-size: 4rem;
+ font-size: 6rem;
 }
 
-.money span {
-  color: var(--cor2);
-  font-size: 20px;
-  vertical-align: middle;
-  margin-right: 7px;
-  font-weight: 600;
+span.detail {
+  color: var(--cor5);
+  font-size: 1.5rem;
+  margin-right: 5px;
+  font-weight: 400;
+}
+
+.choice {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: 3px solid var(--cor5);
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  color: var(--cor5);
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 30px;
+  transition: all .3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background: #0d0d0d0e;
 }
 
 .choice ul {
+  display: none;
   max-width: max-content;
   margin: 0 auto;
   background: transparent;
   border: 3px solid var(--cor5);
   border-radius: 20px;
-  padding: 10px 30px;
   list-style: none;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .1);
 }
@@ -70,24 +92,101 @@ body {
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 1px;
-  padding: 15px 0;
   text-align: center;
+  padding: 15px 50px;
   cursor: pointer;
-  transition: all 2s ease;
+  border-radius: 15px;
 }
 
-.choice .first {
-  color: var(--cor5);
-  font-size: 1.5rem;
-  font-weight: normal;
+.choice li:hover {
+  background: var(--cor4);
+  color: var(--cor1);
 }
 
-.choice li + li {
-  border-top: 2px solid var(--cor3);
-  color: var(--cor2);
+/* botoes */
+[data-buttons].ativo {
+  display: block;
 }
 
-.hidden {
+[data-buttons] li.hidden {
   display: none;
 }
 
+.button.remove {
+  display: none;
+}
+/* Lista de notas */
+
+.list-money {
+  display: none;
+}
+
+.list-money .sinal {
+  display: block;
+  font-size: 5rem;
+  color: green;
+  text-align: center;
+  transition: all .4s ease-in-out;
+}
+
+.list-money ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.list-money li {
+  cursor: pointer;
+}
+
+.list-money.ativo {
+  display: block;
+}
+
+.list-money.ativo ul {
+  animation: show .4s forwards;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* retirar dinheiro */
+
+.decrement {
+  display: flex;
+  justify-content: center;
+}
+
+.decrement-button{
+  padding: 5px 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  border: none;
+  margin: 10px;
+  color: var(--cor5);
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+[data-action="increment"].decrement-button {
+  border: 3px solid green;
+  color: green;
+}
+
+[data-action="decrement"].decrement-button {
+  border: 3px solid red;
+  color: red;
+}
