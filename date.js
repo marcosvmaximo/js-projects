@@ -53,5 +53,3 @@ clickPreviousMonth.addEventListener("click", () => {
   today.setMonth(selectedMonth);
   getMonth();   
 });
-
-export default today;
