@@ -1,23 +1,47 @@
 export default function clickMoney() {
   const notes = document.querySelectorAll("[data-value]");
   const money = document.querySelector(".money");
+  const decrement = document.querySelector(".decrement-button");
+
   let savedMoney = +localStorage.getItem("savedMoney");
 
-  const incrementInterval = Math.floor(savedMoney / 53);
-  let start = 0;
-  const anima = setInterval(() => {
-    start += incrementInterval;
-    money.innerText = start;
-    if (start > savedMoney) {
-      money.innerText = savedMoney.toFixed(2);
-      clearInterval(anima);
+  const checkColor = (number) => {
+    number <= 0
+      ? (money.style.color = "red")
+      : (money.style.color = "green");
+  }
+
+  const initAnimaNumber = (start = 0) => {
+    const sentValue = savedMoney - start
+    const incrementInterval = (start !== 0) ? sentValue / 10 : savedMoney / 50;
+
+    if (sentValue) {
+      const animaPositive = setInterval(() => {
+        start += incrementInterval;
+        money.innerText = start.toFixed(2);
+        checkColor(start)
+        if (start > savedMoney) {
+          money.innerText = savedMoney.toFixed(2);
+          clearInterval(animaPositive);
+        }
+      }, 10);
     }
-  }, 50);
 
-  savedMoney <= 0 ? (money.style.color = "red") : (money.style.color = "green");
+    if (sentValue) {
+      console.log(incrementInterval)
+      const animaNegative = setInterval(() => {
+        start += incrementInterval;
+        money.innerText = start.toFixed(2);
+        checkColor(start)
+        if (start < savedMoney) {
+          money.innerText = savedMoney.toFixed(2);
+          clearInterval(animaNegative);
+        }
+      }, 50);
+    }
 
-  const decrement = document.querySelector(".decrement-button");
-  decrement.addEventListener("click", toggleButton);
+  };
+  initAnimaNumber();
 
   function toggleButton() {
     const sinal = document.querySelectorAll(".sinal");
@@ -39,28 +63,22 @@ export default function clickMoney() {
     }
   }
 
-  notes.forEach((item) => {
-    item.addEventListener("click", getValue);
-  });
+  decrement.addEventListener("click", toggleButton);
+  notes.forEach((note) => note.addEventListener("click", getValue));
 
   function getValue(e) {
     const increOrDecre = decrement.getAttribute("data-action");
+
     if (increOrDecre === "increment") {
-      const value = e.target.parentElement.getAttribute("data-value");
-      savedMoney += +value;
-      money.innerText = savedMoney.toFixed(2);
+      const value = Number(e.target.parentElement.getAttribute("data-value"));
+      savedMoney += value;
       localStorage.setItem("savedMoney", savedMoney);
-      +money.innerText < 0
-        ? (money.style.color = "red")
-        : (money.style.color = "green");
+      initAnimaNumber(savedMoney - value);
     } else {
-      const value = e.target.parentElement.getAttribute("data-value");
-      savedMoney -= +value;
-      money.innerText = savedMoney.toFixed(2);
+      const value = Number(e.target.parentElement.getAttribute("data-value"));
+      savedMoney -= value;
       localStorage.setItem("savedMoney", savedMoney);
-      +money.innerText < 0
-        ? (money.style.color = "red")
-        : (money.style.color = "green");
+      initAnimaNumber(savedMoney + value);
     }
   }
 }
