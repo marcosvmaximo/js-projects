@@ -1,17 +1,30 @@
-export default function initAccordionList(){
-  const list = document.querySelectorAll('[data-anime="accordion"] dt');
-  const contentList = document.querySelectorAll('[data-anime="accordion"] dt + dd');
-  contentList[0].classList.add('ativo');
-  
-  function showList(index) {
-    list[index].classList.toggle('ativado');
-    contentList[index].classList.toggle('ativo');
+export default class AccordionList{
+  constructor(list){
+    this.accordionList = document.querySelectorAll(list);
+    this.activeClassList = 'ativado'
+    this.activeClassListContents = 'ativo';
   }
 
-  if (list.length && contentList.length) {
-    list.forEach((item, index) => {
-      item.addEventListener('click', () => showList(index))
+  // pega o item da lista pelo index, e retira ou coloca a classe de ativo, e em seu pai para mostrar a seta para cima e para baixo
+  toggleAccordion(index) {
+    this.accordionList[index].classList.toggle(this.activeClassList);
+    this.accordionList[index].nextElementSibling.classList.toggle(this.activeClassListContents);
+  }
+
+  // adicionar o evento de click em cada item da lista, e enviar o index para a função toggleAccordion
+  addAccordionEvent(){
+    this.accordionList.forEach((itemList, index) => {
+      itemList.addEventListener('click', () => this.toggleAccordion(index))
     })
   }
-  
+
+  // iniciar função
+  init(){
+    if (this.accordionList.length){
+      this.toggleAccordion(0)
+      this.addAccordionEvent()
+      // ativar o primeiro item da lista
+    }
+  }
+
 }
