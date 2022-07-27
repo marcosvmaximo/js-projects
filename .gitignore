@@ -1,5 +1,3 @@
 node_modules
-webpack.config.js
 .eslintrc.json
 package-lock.json
-package.json
