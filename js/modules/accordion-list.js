@@ -24,6 +24,7 @@ export default class AccordionList{
       this.toggleAccordion(0)
       this.addAccordionEvent()
       // ativar o primeiro item da lista
+      return this
     }
   }
 
