@@ -25,7 +25,6 @@ modal.init();
 
 const tooltip = new ToolTip("[data-tooltip]")
 tooltip.init();
-console.log(tooltip)
 
 
 
