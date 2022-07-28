@@ -13,7 +13,6 @@ import initFetchBtc from './modules/fetch-btc.js';
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
 
-
 const accordion = new Accordion('[data-anime="accordion"] dt')
 accordion.init()
 
@@ -32,5 +31,5 @@ initAnimationScroll();
 initDropdownMenu();
 initMenuMobile();
 initOperation();
-initFetchAnimals();
+initFetchAnimals('js/animaisapi.json', '.numeros-grid');
 initFetchBtc();
