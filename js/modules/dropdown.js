@@ -30,6 +30,6 @@ export default class DropdownMenu {
 
   init(){
     if(this.dropdownMenus.length) this.addDropdownMenusEvent();
-    return TouchList
+    return this
   }
 }

@@ -1,36 +1,54 @@
 import outsideClick from "./outside-click.js";
+import debounce from "./debounce.js";
 
-export default function initMenuMobile() {
-  const menuButton = document.querySelector('[data-menu="button"]');
-  const menuList = document.querySelector('[data-menu="list"]');
+export default class MenuMobile {
+  constructor(menuButton, menuList, events){
+    this.menuButton = document.querySelector(menuButton);
+    this.menuList = document.querySelector(menuList);
+    this.activeClass = 'active';
 
-  const login = document.querySelector(".loginButton");
-  const menuAddLogin = document.querySelector(".menu");
-  const fatherLogin = login.parentElement;
+    (events === undefined) ? this.events = ["click"] : this.events = events;
 
-  const displaySize = window.matchMedia("(max-width: 700px)");
+    this.loginButton = document.querySelector(".loginButton");
+    this.fatherLogin = this.loginButton.parentElement;
+    this.menu = document.querySelector(".menu");
+    this.displaySize = window.matchMedia("(max-width: 700px)");
 
-  const checkSizeWindow = () => {
-    if (displaySize.matches) {
-      menuAddLogin.appendChild(login);
+    this.openMenu = this.openMenu.bind(this);
+  }
+
+  checkSizeWindow() {
+    if (this.displaySize.matches) {
+      this.menu.appendChild(this.loginButton);
     } else {
-      fatherLogin.appendChild(login);
+      this.fatherLogin.appendChild(this.loginButton);
     }
   };
 
-  checkSizeWindow();
-  window.addEventListener("resize", () => checkSizeWindow());
+  addEventResize(){
+    window.addEventListener("resize", debounce(() => this.checkSizeWindow(), 50));
+  }
 
-  function openMenu() {
-    menuList.classList.add("active");
-    menuButton.classList.add("active");
-    outsideClick(menuList, ["click"], () => {
-      menuList.classList.remove("active");
-      menuButton.classList.remove("active");
+  openMenu() {
+    this.menuList.classList.add(this.activeClass);
+    this.menuButton.classList.add(this.activeClass);
+    outsideClick(this.menuList, this.events, () => {
+      this.menuList.classList.remove(this.activeClass);
+      this.menuButton.classList.remove(this.activeClass);
     });
   }
 
-  if (menuButton) {
-    menuButton.addEventListener("click", openMenu);
+  addMenuMobileEvents(){
+    this.events.forEach(event => this.menuButton.addEventListener(event, this.openMenu));
+
+  }
+
+  init(){
+    if (this.menuButton && this.menuList) {
+      this.addMenuMobileEvents();
+      this.checkSizeWindow()
+      this.addEventResize()
+    }
+    return this
   }
 }
