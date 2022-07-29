@@ -1,19 +1,38 @@
-export default function initOperation() {
-  const operation = document.querySelector("[data-semana]");
+export default class initOperation {
+  constructor(operation, activeClass) {
+    this.operation = document.querySelector(operation);
+    this.activeClass = activeClass;
+  }
 
-  const daysWeekOpen = operation.dataset.semana.split(",").map(Number);
-  const timeWeekOpen = operation.dataset.horario.split(",").map(Number);
+  operationalData() {
+    this.daysWeekOpen = this.operation.dataset.semana.split(",").map(Number);
+    this.timeWeekOpen = this.operation.dataset.horario.split(",").map(Number);
+  }
 
-  const dateNow = new Date();
-  const dayNow = dateNow.getDay();
-  const hoursNow = dateNow.getHours();
+  nowData() {
+    this.dateNow = new Date();
+    this.dayNow = this.dateNow.getDay();
+    this.hoursNow = this.dateNow.getUTCHours() - 3;
+  }
 
-  const openDays = daysWeekOpen.indexOf(dayNow) !== -1;
-  const openHours = hoursNow >= timeWeekOpen[0] && hoursNow < timeWeekOpen[1];
+  itsOpen() {
+    const openDays = this.daysWeekOpen.indexOf(this.dayNow) !== -1;
+    const openHours =
+      this.hoursNow >= this.timeWeekOpen[0] &&
+      this.hoursNow < this.timeWeekOpen[1];
+    return openDays && openHours;
+  }
 
-  if (openDays && openHours) {
-    operation.classList.add("aberto");
+  activeOpen() {
+    if (this.itsOpen()) this.operation.classList.add(this.activeClass);
+  }
+
+  init() {
+    if (this.operation) {
+      this.operationalData();
+      this.nowData();
+      this.activeOpen();
+    }
+    return this;
   }
 }
-
-initOperation();
