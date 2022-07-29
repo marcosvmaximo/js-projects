@@ -23,7 +23,6 @@ export default function createAnimais(url, target) {
 
   async function fetchAnimals() {
     try {
-      console.log(url)
       const animaisResponse = await fetch(url);
       const animaisJson = await animaisResponse.json();
 
