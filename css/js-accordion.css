@@ -25,11 +25,17 @@
 }
 
 .js [data-anime="accordion"] dt:after {
-  content: '↴';
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url('../img/arrow-red.svg') no-repeat center center;
   margin-left: 5px;
+  transform: rotate(90deg);
+  transition: transform .3s ease;
 }
 
 .js [data-anime="accordion"] dt.ativado:after{
-  content: '↑';
-  margin-left: 5px;
+  content: '';
+  transform: rotate(-90deg);
 }

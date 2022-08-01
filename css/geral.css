@@ -238,3 +238,10 @@ body {
 [data-semana].aberto::after {
   background: #45f039;
 }
+
+.arrow-black {
+  background: url(../img/arrow-black.svg) no-repeat center center;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}

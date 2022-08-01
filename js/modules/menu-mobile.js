@@ -7,7 +7,7 @@ export default class MenuMobile {
     this.menuList = document.querySelector(menuList);
     this.activeClass = 'active';
 
-    (events === undefined) ? this.events = ["click"] : this.events = events;
+    (events === undefined) ? this.events = ["click", "touchstart"] : this.events = events;
 
     this.loginButton = document.querySelector(".loginButton");
     this.fatherLogin = this.loginButton.parentElement;
@@ -29,7 +29,8 @@ export default class MenuMobile {
     window.addEventListener("resize", debounce(() => this.checkSizeWindow(), 50));
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault()
     this.menuList.classList.add(this.activeClass);
     this.menuButton.classList.add(this.activeClass);
     outsideClick(this.menuList, this.events, () => {
