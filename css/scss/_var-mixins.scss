@@ -1,0 +1,86 @@
+// Cores do site
+$cor-p-claro: #edece4;
+$cor-p-medio: #cbc6b9;
+$cor-p-escuro: #2a2426;
+$cor-cinza: #988c77;
+$verde: #1ab912;
+
+$font-1: 'PT Mono', monospace;
+$font-2: 'Aref Ruqaa', serif;
+
+@function rem($pixel, $contexto: 16){
+  @return ($pixel / $contexto) + rem;
+}
+
+@mixin font($type) {
+  @if $type == 1 {
+    font-family: $font-1;
+    font-size: rem(18);
+    line-height: rem(30);
+  } @else if $type == 2 {
+    font-family: $font-2;
+    font-size: rem(18);
+    line-height: rem(30);
+    color: $cor-cinza;
+  } @else if $type == 3 {
+    font-size: rem(24);
+    line-height: rem(30);
+    font-family: $font-2;
+  }
+}
+
+@mixin border {
+  border: 10px solid $cor-p-medio;
+}
+
+@mixin line {
+  display: inline-block;
+  margin-left: 50px;
+  width: 65%;
+  height: 2px;
+  background: $cor-p-escuro;
+  @include d(m) {
+    margin-left: 10px;
+    width: 60%;
+  }
+  @include d(s) {
+    margin-left: 10px;
+    width: 80%;
+  }
+}
+
+@mixin input {
+  border: 2px solid $cor-cinza;
+  background-color: $cor-p-claro;
+  @include font(2);
+  &::hover, &::focus {
+    border-color: $cor-p-medio;
+    transform: scale(1.1);
+  }
+}
+
+@mixin button {
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  background: $cor-p-claro;
+  border: 2px solid $cor-cinza;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 -1px $cor-p-medio, 3px 4px 0 1px $cor-cinza;
+  transition: all .3s ease;
+  &:hover {
+    box-shadow: 1px 1px 0 -1px $cor-p-medio, 1px 1px 0 0px $cor-cinza;
+  }
+}
+
+.title {
+  @include font(1);
+  text-transform: uppercase;
+  &::after {
+    content: '';
+    @include line;
+  }
+  @include d(s) {
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,50 @@
+.contact {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  @include d(m){
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  label {
+    margin: 10px 0 5px 0;
+    display: block;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 5px 10px;
+    @include input;
+  }
+
+  .form__grid {
+    display: flex;
+    gap: 20px;
+    div {
+      flex: 1;
+    }
+  }
+
+  button {
+    @include button;
+    color: $cor-p-escuro;
+  }
+
+  &__address {
+    a{
+      display: block;
+      color: $cor-p-escuro;
+      text-decoration: none;
+      text-align: right
+    }
+    @include d(m) {
+      @include set-column(2);
+    }
+    @include d(s) {
+      @include set-column(1);
+    }
+    img {
+      margin: 0 auto;
+      @include border;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.home {
+  position: relative;
+
+  &__div {
+    justify-self: left;
+  }
+
+  &__logo {
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    @include font(1);
+    .open {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $verde;
+      margin-left: 35px;
+    }
+  }
+
+  &__detail {
+    border-right: 2px solid $cor-p-escuro;
+    address {
+      border-top: 2px solid $cor-p-escuro;
+    }
+    h1,
+    p {
+      width: 300px;
+      padding: 10px 0;
+    }
+  }
+
+  &__number {
+    color: $cor-cinza;
+    &::after {
+      content: "////";
+      display: block;
+      font-size: 140px;
+      color: $cor-p-escuro;
+      margin-top: 200px;
+      letter-spacing: -20px;
+      @include d(s) {
+        display: none;
+      }
+      @media (max-width: 880px) {
+        font-size: 80px;
+        margin-top: 80px;
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    @include border;
+  }
+
+  @include d(s) {
+    gap: 50px;
+  }
+}

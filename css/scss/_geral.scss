@@ -1,0 +1,10 @@
+
+body {
+  background: $cor-p-claro;
+  color: $cor-p-escuro;
+  @include border;
+  @include font(1);
+  @include d(s) {
+    border: none;
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: 20px;
+  background: $cor-p-escuro;
+  box-shadow: 0 0 0 10px $cor-p-escuro;
+  p{
+    color: $cor-p-claro;
+  }
+  @include d(s) {
+    text-align: center;
+  }
+  map{
+    img {
+      @include d(s) {
+        margin: 0 auto;
+        padding: 15px;
+      }
+    }
+  }
+}
