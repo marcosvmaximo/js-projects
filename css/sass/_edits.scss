@@ -1,0 +1,21 @@
+// Campo de botões de edição
+.edits {
+  display: flex;
+  justify-content: space-between;
+  background: $p-2;
+  padding: $padding;
+  
+  button {
+    background: transparent;
+    margin: $gap-buttons;
+    padding: 3px;
+    border: none;
+    cursor: pointer;
+    transition: active 3s cubic-bezier(.44,-0.16,.28,1.2);
+    &.active {
+      transform: scale(155%);
+      @include underline-click;
+    }
+  }
+  
+}

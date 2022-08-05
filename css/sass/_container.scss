@@ -1,0 +1,21 @@
+body {
+  background-color: $white;
+  color: $black;
+  @include centralize;
+
+  .container {
+    @include shadow;
+    width: 750px;
+    animation: show .5s ease-out;
+    overflow: scroll;
+  }
+}
+
+@keyframes show {
+  to {
+    transform: scaleY(1);
+  }
+  from {
+    transform: scaleY(0);
+  }
+}

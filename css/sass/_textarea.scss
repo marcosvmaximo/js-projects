@@ -1,0 +1,41 @@
+.text {
+  width: calc(100% - 30px);
+  height: 350px;
+  background: $full-white;
+  padding: $padding-s;
+
+  &:focus {
+    outline: none;
+  }
+
+  p {
+    @include font(normal);
+  }
+  p.uppercase {
+    @include font(upper);
+  }
+  p.lowercase {
+    @include font(lower)
+  }
+  u {
+    text-decoration-color: $p-2;
+  }
+  s {
+    text-decoration-color: $p-2;
+  }
+  q {
+    @include font(quote);
+  }
+  blockquote {
+    @include font(bquote);
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+}

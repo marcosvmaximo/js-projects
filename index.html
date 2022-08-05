@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Editor de rich text, compacto e simplifista. Par projeto pessoal Marcos Maximo."
+    />
+    <meta
+      name="keyword"
+      content="Editor de texto, texto, escrever texto, titulo, sublinhar"
+    />
+    <meta name="author" content="Marcos Maximo" />
+    <title>Editor de Texto</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./img/favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./img/favicon//apple-icon-72x72.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./img/favicon//favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon//favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/favicon//manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./img/favicon//ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="edits">
+        <div class="edit-1">
+          <button><img src="./img/format-text.svg" alt="" width="22px" height="22px"></button>
+          <button class="active"><img src="./img/bold.svg" alt="" width="22px" height="22px"></button>
+          <button><img src="./img/italic.svg" alt="" width="22px" height="22px"></button>
+          <button><img src="./img/underline.svg " alt="" width="22px" height="22px"></button>
+          <button><img src="./img/strike.svg " alt="" width="22px" height="22px"></button>
+          <button><img src="./img/quote-svgrepo-com.svg" alt="" width="22px" height="22px"></button>
+          <button><img src="./img/blockquote.svg" alt="" width="22px" height="22px"></button>
+        </div>
+        <div class="edit-2">
+          <button><img src="./img/format-left.svg" alt="" width="22px" height="22px"></button>
+          <button><img src="./img/format-center.svg" alt="" width="22px" height="22px"></button>
+          <button><img src="./img/format-right.svg" alt="" width="22px" height="22px"></button>
+        </div>
+
+      </nav>
+
+      <section contenteditable="true"
+        class="text"
+        id="text-area"
+        aria-label="Area de digitação"
+      >
+      <p>MAIUSCULA</p>
+      <p><b>Negrito</b></p>
+      <p><i>Italic</i></p>
+      <p><u>underline</u></p>
+      <p><s>strike</s></p>
+      <p><q>quote</q></p>
+      <p><blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fuga quod neque officia facere perspiciatis nihil perferendis deserunt dolorum minus nisi beatae iste ipsam possimus dignissimos, vero placeat error cum.</blockquote></p>
+    </section>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
