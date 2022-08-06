@@ -42,14 +42,19 @@ const getMonth = () => {
 };
 
 getMonth();
+import functionInit from "./script.js";
 
 clickNextMonth.addEventListener("click", () => {
   selectedMonth += 1;
   today.setMonth(selectedMonth);
   getMonth();
+  functionInit()
 });
 clickPreviousMonth.addEventListener("click", () => {
   selectedMonth -= 1;
   today.setMonth(selectedMonth);
-  getMonth();   
+  getMonth();  
+  functionInit()
 });
+
+export default today;

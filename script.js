@@ -5,7 +5,9 @@ const balanceDisplay = document.querySelector("#balance");
 const form = document.querySelector("#form");
 const inputTransactionName = document.querySelector("#text");
 const inputTransactionAmount = document.querySelector("#amount");
-const inputTransactionDate = document.querySelector('#date');
+const inputTransactionDate = document.querySelector("#date");
+
+import dateSelected from './date.js';
 
 const localStorageTransactions = JSON.parse(
   localStorage.getItem("transactions")
@@ -14,22 +16,23 @@ const localStorageTransactions = JSON.parse(
 let transactions =
   localStorage.getItem("transactions") !== null ? localStorageTransactions : [];
 
-const removeTransaction = (ID) => {
-  transactions = transactions.filter((transaction) => transaction.id !== ID);
-  updateLocalStorage();
-  init();
-};
+const addTransactionIntoDOM = ({ amount, name, date }) => {
 
-const addTransactionIntoDOM = ({ amount, name, id }) => {
-  const operator = amount < 0 ? "-" : "+";
-  const CSSClass = amount < 0 ? "minus" : "plus";
-  const amountWithoutOperator = Math.abs(amount);
-  const li = document.createElement("li");
-
-  li.classList.add(CSSClass);
-  li.innerHTML = `
-  ${name} <span>${operator} R$ ${amountWithoutOperator}</span><button class="delete-btn" onclick="removeTransaction(${id})">x</button>`;
-  transactionsUl.prepend(li);
+  const dateObject = new Date(date)
+  const monthObject = dateObject.getMonth()
+  const yearObject = dateObject.getFullYear()
+  
+  if(monthObject === dateSelected.getMonth() && yearObject === dateSelected.getFullYear()){
+      const operator = amount < 0 ? "-" : "+";
+      const CSSClass = amount < 0 ? "minus" : "plus";
+      const amountWithoutOperator = Math.abs(amount);
+      const li = document.createElement("li");
+    
+      li.classList.add(CSSClass);
+      li.innerHTML = `
+      ${name} <span>${operator} R$ ${amountWithoutOperator}</span><button class="delete-btn">x</button>`;
+      transactionsUl.prepend(li);
+  }
 };
 
 const getExpenses = (transactionsAmounts) =>
@@ -59,11 +62,27 @@ const updateBalanceValues = () => {
   expenseDisplay.textContent = `R$ ${getExpenses(transactionsAmounts)}`;
 };
 
+const removeTransaction = ({target}) => {
+  const contentElement = target.parentElement.innerText.split('\n')[0]; // primeiro conteudo de texto do elemento clicado
+  transactions = transactions.filter((transaction) => transaction.name !== contentElement);
+  // ira retornar uma array com todos os itens que tiverem o conteudo de texto diferente do que foi clicado, assim deixando de fora o que foi clicado, e iniciando tudo de novo
+  updateLocalStorage();
+  init();
+};
+
+const addDeleteEvent = () => {
+  const deleteButtons = transactionsUl.querySelectorAll('.delete-btn');
+  for(const button of deleteButtons){
+    button.addEventListener('click', e => removeTransaction(e))
+  }
+}
+
 const init = () => {
   transactionsUl.innerHTML = "";
 
   transactions.forEach(addTransactionIntoDOM);
   updateBalanceValues();
+  addDeleteEvent()
 };
 
 init();
@@ -74,7 +93,11 @@ const updateLocalStorage = () => {
 
 const generatorID = () => Math.round(Math.random() * 1000);
 
-const addToTransactionsArray = (transactionName, transactionAmount, transactionDate) => {
+const addToTransactionsArray = (
+  transactionName,
+  transactionAmount,
+  transactionDate
+) => {
   const transaction = {
     id: generatorID(),
     name: transactionName,
@@ -109,4 +132,5 @@ const handleFormSubmit = (event) => {
   cleanInput();
 };
 
+export default init;
 form.addEventListener("submit", handleFormSubmit);
