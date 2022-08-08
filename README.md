@@ -1,6 +1,11 @@
 <h1>Projeto Infinite Scroll</h1>
-<div>| <a href="#tecnologias">Tecnologias Usadas</a> | <a href="#recursos">Rescursos</a> | <a href="#objetivo">Objetivo</a> | <a href="#aprimoramento">O que aprendi?</a> | <a href="#resumo">Resumo</a> |</div>
+
+<div align="center">| <a href="#tecnologias">Tecnologias Usadas</a> | <a href="#recursos">Rescursos</a> | <a href="#objetivo">Objetivo</a> | <a href="#aprimoramento">O que aprendi?</a> | <a href="#resumo">Resumo</a> | </div>
+<br>
+<div align="center">
 <img src="https://hardzone.es/app/uploads-hardzone.es/2020/04/Scroll-rat%C3%B3n.jpg" src="dedo em um mouse" width="200" heigth="200">
+</div>
+<br>
 <p>É um projeto que simula uma rede social. Temos uma página na qual sempre que rolada para a parte inferior, irá puxar e mostrar mais posts.</p>
 
 <i>O ambiente é controlado e irei fazer uso de uma API que simula posts.</i>
@@ -12,6 +17,7 @@
 <p>Isso evita que o usuario precise recarregar a página para ver novas postagem nesta suposta "rede social".</p>
 
 <h2 id="tecnologias">Tecnologias usadas:</h2>
+![icons8-javascript](https://user-images.githubusercontent.com/96027900/183345769-4c8b6b9e-5ca8-41b9-9827-0fb656930369.gif)
 <ul>
   <li>HTML & CSS </li>
   <li> Javascript (Puro) </li>
@@ -44,13 +50,13 @@
 
 <p>Primeiro formei uma ordem simples de objetivo principal que a aplicação deveria fazer.</p>
 
-![imagem1](imgs/mapa1.png)
+![mapa1](https://user-images.githubusercontent.com/96027900/183345770-3a82e531-3ab3-4d95-9b3e-3a28c0122117.png)
 
 <p>Ela tem que trazer os 5 primeiros posts por uma requesição, e quando o usuario quiser, fazer mais requesições e puxar mais posts.</p>
 
 <p>Depois elaborei uma sequencia mais lógica dos principais metodos que achei que a aplicação precisaria para fazer essas simples ações</p>
 
-<img src="./imgs/mapa2.png" alt="">
+![mapa2](https://user-images.githubusercontent.com/96027900/183345750-718b82a6-18ff-4a7d-890d-58cde2a18c3f.png)
 
 <p>Consiste basicamente em uma sequencia infinita, na qual se da inicio fazendo referencia ao local onde os posts irão ser inseridos, após isto, começa uma sequencia na qual se cria novos elementos com os dados trazidos de uma requesição à API, e os incrementa na página junto aos outros.</p>
 
