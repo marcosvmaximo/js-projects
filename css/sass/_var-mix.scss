@@ -15,7 +15,7 @@ $margin: 10px;
 $gap-buttons: 0 10px;
 
 @function rem($size) {
-  @return ($size / 16)+rem;
+  @return calc($size / 16) + rem;
 }
 
 @mixin font ($type) {
@@ -31,23 +31,35 @@ $gap-buttons: 0 10px;
   } @else if $type == quote {
     background: $white-2;
     padding: 2px 8px;
+    &::before {
+      content: '" ';
+      color: $p-1;
+      display: inline;
+    }
+    &::after {
+      content: ' "';
+      display: inline;
+      color: $p-1;
+    }
   } @else if $type == bquote {
     background: $white-2;
-    padding: $padding;
-    padding-bottom: 5px;
+    padding: 30px 20px;
     margin: $margin;
     border-left: 5px solid $p-2;
+    position: relative;
     &::before{
       content: url('../../img/blockquote/quote-left.svg');
       display: block;
-      margin-left: -15px;
+      position: absolute;
+      left: 10px;
+      top: 5px;
     }
     &::after{
       content: url('../../img/blockquote/quote-right.svg');
       display: block;
-      margin-right: 5px;
-      text-align: end;
-      margin-right: -5px;
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
     }
   }
 }

@@ -7,6 +7,7 @@ html,
 body {
   width: 100%;
   height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 ul {
@@ -33,6 +34,7 @@ body .container {
   box-shadow: 2px 2px 4px 1px rgba(6, 1, 38, 0.1), 1px 1px 3px 0 rgba(16, 3, 64, 0.1);
   width: 750px;
   animation: show 0.5s ease-out;
+  overflow: scroll;
 }
 
 @keyframes show {
@@ -77,48 +79,50 @@ body .container {
   font-weight: 400;
   font-size: 1rem;
 }
-.text p.uppercase {
-  font-family: "Source Sans Pro", sans-serif;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-.text p.lowercase {
-  font-family: "Source Sans Pro", sans-serif;
-  line-height: 1.5;
-  text-transform: lowercase;
-}
 .text u {
   text-decoration-color: #6A66F2;
 }
 .text s {
   text-decoration-color: #6A66F2;
 }
-.text q {
+.text sup {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   background: #dddddd;
   padding: 2px 8px;
 }
+.text sup::before {
+  content: '" ';
+  color: #7B77F2;
+  display: inline;
+}
+.text sup::after {
+  content: ' "';
+  display: inline;
+  color: #7B77F2;
+}
 .text blockquote {
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   background: #dddddd;
-  padding: 15px 25px;
-  padding-bottom: 5px;
+  padding: 30px 20px;
   margin: 10px;
   border-left: 5px solid #6A66F2;
+  position: relative;
 }
 .text blockquote::before {
   content: url("../../img/blockquote/quote-left.svg");
   display: block;
-  margin-left: -15px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
 }
 .text blockquote::after {
   content: url("../../img/blockquote/quote-right.svg");
   display: block;
-  margin-right: 5px;
-  text-align: end;
-  margin-right: -5px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
 }
 .text .text-left {
   text-align: left;

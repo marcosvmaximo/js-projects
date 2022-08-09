@@ -55,35 +55,28 @@
     <div class="container">
       <nav class="edits">
         <div class="edit-1">
-          <button><img src="./img/format-text.svg" alt="" width="22px" height="22px"></button>
-          <button class="active"><img src="./img/bold.svg" alt="" width="22px" height="22px"></button>
-          <button><img src="./img/italic.svg" alt="" width="22px" height="22px"></button>
-          <button><img src="./img/underline.svg " alt="" width="22px" height="22px"></button>
-          <button><img src="./img/strike.svg " alt="" width="22px" height="22px"></button>
-          <button><img src="./img/quote-svgrepo-com.svg" alt="" width="22px" height="22px"></button>
-          <button><img src="./img/blockquote.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="formatBlock" data-value="h1"><img src="./img/format-text.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="bold" data-value="null"><img src="./img/bold.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="italic"data-value="null"><img src="./img/italic.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="underline" data-value="null"><img src="./img/underline.svg " alt="" width="22px" height="22px"></button>
+          <button data-type="strikeThrough" data-value="null"><img src="./img/strike.svg " alt="" width="22px" height="22px"></button>
+          <button data-type="superscript" data-value="null"><img src="./img/quote-svgrepo-com.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="formatBlock" data-value="blockquote"><img src="./img/blockquote.svg" alt="" width="22px" height="22px"></button>
         </div>
         <div class="edit-2">
-          <button><img src="./img/format-left.svg" alt="" width="22px" height="22px"></button>
-          <button><img src="./img/format-center.svg" alt="" width="22px" height="22px"></button>
-          <button><img src="./img/format-right.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="justifyLeft" data-value="null"><img src="./img/format-left.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="justifyCenter" data-value="null"><img src="./img/format-center.svg" alt="" width="22px" height="22px"></button>
+          <button data-type="justifyRight" data-value="null"><img src="./img/format-right.svg" alt="" width="22px" height="22px"></button>
         </div>
 
       </nav>
 
-      <section contenteditable="true"
+      <div contenteditable="true"
         class="text"
         id="text-area"
         aria-label="Area de digitação"
       >
-      <p>MAIUSCULA</p>
-      <p><b>Negrito</b></p>
-      <p><i>Italic</i></p>
-      <p><u>underline</u></p>
-      <p><s>strike</s></p>
-      <p><q>quote</q></p>
-      <p><blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fuga quod neque officia facere perspiciatis nihil perferendis deserunt dolorum minus nisi beatae iste ipsam possimus dignissimos, vero placeat error cum.</blockquote></p>
-    </section>
+    </div>
     </div>
 
     <script src="./js/script.js"></script>

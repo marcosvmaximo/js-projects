@@ -11,19 +11,13 @@
   p {
     @include font(normal);
   }
-  p.uppercase {
-    @include font(upper);
-  }
-  p.lowercase {
-    @include font(lower)
-  }
   u {
     text-decoration-color: $p-2;
   }
   s {
     text-decoration-color: $p-2;
   }
-  q {
+  sup {
     @include font(quote);
   }
   blockquote {
