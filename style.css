@@ -34,7 +34,6 @@ body .container {
   box-shadow: 2px 2px 4px 1px rgba(6, 1, 38, 0.1), 1px 1px 3px 0 rgba(16, 3, 64, 0.1);
   width: 750px;
   animation: show 0.5s ease-out;
-  overflow: scroll;
 }
 
 @keyframes show {
@@ -66,8 +65,9 @@ body .container {
 
 .text {
   width: calc(100% - 30px);
-  height: 350px;
+  height: 450px;
   background: #fff;
+  overflow:auto;
   padding: 10px 15px;
 }
 .text:focus {
@@ -135,3 +135,24 @@ body .container {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width: 650px) {
+  img {
+    width: 14px;
+    height: 14px;
+  }
+  .edit-1, .edit-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .edits button {
+    margin: 0 3px !important;
+  }
+}
+
+@media (max-width: 350px){
+  .edits {
+    padding: 10px;
+  }
+}
