@@ -15,7 +15,7 @@ músicas que se encaixarem.
  - [Referência CSS & HTML](https://github.com/Roger-Melo/lyrics-search)
 ## Screenshots
 
-![Demostração](https://user-images.githubusercontent.com/96027900/183812535-55856cc7-57a5-44e7-9ae4-7561d8e8dd96.gif)
+![Demostração](https://user-images.githubusercontent.com/96027900/184515526-485a7773-652c-4ffb-9528-5da2428a46f7.gif)
 
 
 ## Funcionalidades
