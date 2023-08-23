@@ -1,0 +1,23 @@
+{
+  "name": "editor-rich-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcosvmaximo/editor-rich-text.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcosvmaximo/editor-rich-text/issues"
+  },
+  "homepage": "https://github.com/marcosvmaximo/editor-rich-text#readme",
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  }
+}

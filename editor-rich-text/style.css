@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: #ededed;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .container {
+  box-shadow: 2px 2px 4px 1px rgba(6, 1, 38, 0.1), 1px 1px 3px 0 rgba(16, 3, 64, 0.1);
+  width: 750px;
+  animation: show 0.5s ease-out;
+}
+
+@keyframes show {
+  to {
+    transform: scaleY(1);
+  }
+  from {
+    transform: scaleY(0);
+  }
+}
+.edits {
+  display: flex;
+  justify-content: space-between;
+  background: #6A66F2;
+  padding: 15px 25px;
+}
+.edits button {
+  background: transparent;
+  margin: 0 10px;
+  padding: 3px;
+  border: none;
+  cursor: pointer;
+  transition: active 3s cubic-bezier(0.44, -0.16, 0.28, 1.2);
+}
+.edits button.active {
+  transform: scale(155%);
+  box-shadow: 0 4px 0 -2px #7B77F2;
+}
+
+.text {
+  width: calc(100% - 30px);
+  height: 450px;
+  background: #fff;
+  overflow:auto;
+  padding: 10px 15px;
+}
+.text:focus {
+  outline: none;
+}
+.text p {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.text u {
+  text-decoration-color: #6A66F2;
+}
+.text s {
+  text-decoration-color: #6A66F2;
+}
+.text sup {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5;
+  background: #dddddd;
+  padding: 2px 8px;
+}
+.text sup::before {
+  content: '" ';
+  color: #7B77F2;
+  display: inline;
+}
+.text sup::after {
+  content: ' "';
+  display: inline;
+  color: #7B77F2;
+}
+.text blockquote {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5;
+  background: #dddddd;
+  padding: 30px 20px;
+  margin: 10px;
+  border-left: 5px solid #6A66F2;
+  position: relative;
+}
+.text blockquote::before {
+  content: url("../../img/blockquote/quote-left.svg");
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+.text blockquote::after {
+  content: url("../../img/blockquote/quote-right.svg");
+  display: block;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+.text .text-left {
+  text-align: left;
+}
+.text .text-center {
+  text-align: center;
+}
+.text .text-right {
+  text-align: right;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+@media (max-width: 650px) {
+  img {
+    width: 14px;
+    height: 14px;
+  }
+  .edit-1, .edit-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .edits button {
+    margin: 0 3px !important;
+  }
+}
+
+@media (max-width: 350px){
+  .edits {
+    padding: 10px;
+  }
+}
