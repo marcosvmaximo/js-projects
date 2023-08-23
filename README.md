@@ -6,9 +6,9 @@ O projeto **Nickname Generator** foi desenvolvido com o objetivo de praticar hab
 - **HTML:** Para estruturar a página.
 - **CSS:** Para estilizar os elementos.
 - **JavaScript:** Para gerar os apelidos e lidar com interações.
-
-  
-
+<br>
+<hr>
+<br>
 **Funcionamento:**
 1. **Controle de Tamanho:**
    - O projeto inclui um controle deslizante que determina o tamanho do apelido.
@@ -32,8 +32,9 @@ O projeto **Nickname Generator** foi desenvolvido com o objetivo de praticar hab
 
 5. **Cópia do Apelido:**
    - A função `copyNick` copia o apelido usando `navigator.clipboard.writeText`.
-______________________________________________________________________________________________________________________________________________________________________
-
+<br>
+<hr>
+<br>
 **Aprendizados e Objetivos:** 💭💭
 - Manipulação do DOM com JavaScript.
 - Uso de seletores para interagir com elementos HTML.
