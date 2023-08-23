@@ -1,0 +1,101 @@
+$red: #d8454c;
+$blue: rgb(35, 119, 229);
+$white: #ededed;
+$padding: 15px 20px;
+$margin: 25px 0;
+
+@mixin font($type) {
+  font-family: "Grandstander", sans-serif;
+  @if $type == title {
+    font-size: 22px;
+  } @else if $type == button {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+@mixin centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: #ededed;
+  @include centralize;
+  @include font(title);
+}
+
+.container {
+  .img {
+    @include centralize;
+    .loading.active {
+      display: block;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .infos {
+    background: $red;
+    color: $white;
+    padding: 20px 25px;
+    p {
+      padding: 10px 0;
+    }
+  }
+
+  .search {
+    margin: $margin;
+    input[type="text"] {
+      width: 250px;
+      padding: $padding;
+      border: none;
+      font-size: 18px;
+    }
+    button {
+      display: block;
+      padding: $padding;
+      color: $white;
+      @include font(title);
+      border: none;
+      background: $blue;
+      margin: 25px auto;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.loading {
+  display: none;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border: 10px solid $white;
+  border-left-color: $red;
+  border-radius: 50%;
+  animation: rotate 2s infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
