@@ -2,6 +2,8 @@
 
 O projeto **Password Generator** tem como objetivo criar senhas seguras de forma aleatória. A seguir está a documentação simplificada do projeto, juntamente com os comentários para esclarecer algumas partes do código:
 
+<br>
+
 **Tecnologias Utilizadas:**
 - **HTML:** Para estruturar a página.
 - **CSS:** Para estilizar os elementos.
