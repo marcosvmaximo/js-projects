@@ -1,4 +1,4 @@
-**Projeto: Nickname Generator** 🔍🔍
+<h1>Projeto: Nickname Generator</h1> 🔍🔍
 
 O projeto **Nickname Generator** foi desenvolvido com o objetivo de praticar habilidades em HTML, CSS e JavaScript, além de implementar a funcionalidade de geração de apelidos.
 
