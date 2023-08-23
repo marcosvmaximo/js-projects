@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cofrinho</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="saved-money">
+      <h1>Seu dinheiro guardado</h1>
+      <div>
+        <span class="detail">R$</span>
+        <span class="money">0</span>
+      </div>
+    </div>
+    <div class="put-money">
+      <div class="choice" aria-expanded="true">
+        <button class="button">guardar mais dinheiro</button>
+        <ul data-buttons>
+          <li><h3>Notas</h3></li>
+          <li><h3>Moedas</h3></li>
+        </ul>
+      </div>
+        <section class="banknotes list-money">
+          <span class="sinal increment">+</span>
+          <ul>
+            <li data-value="2"><img src="./notas/2.png" alt=""></li>
+            <li data-value="5"><img src="./notas/5.png" alt=""></li>
+            <li data-value="10"><img src="./notas/10.png" alt=""></li>
+            <li data-value="20"><img src="./notas/20.png" alt=""></li>
+            <li data-value="50"><img src="./notas/50.png" alt=""></li>
+            <li data-value="100"><img src="./notas/100.png" alt=""></li>
+          </ul>
+        </section>
+        <section class="coins list-money">
+          <span class="sinal increment">+</span>
+          <ul>
+            <li data-value="0.05"><img src="./moedas/5.png" alt=""></li>
+            <li data-value="0.10"><img src="./moedas/10.png" alt=""></li>
+            <li data-value="0.25"><img src="./moedas/25.png" alt=""></li>
+            <li data-value="0.50"><img src="./moedas/50.png" alt=""></li>
+            <li data-value="1"><img src="./moedas/1.png" alt=""></li>
+          </ul>
+        </section>
+    </div>
+    <div class="decrement">
+      <button class="decrement-button" data-action="increment">adicionando</button>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
