@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Le Scone</title>
+    <meta name="description" content="Le Scone - Restaurante" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keyword" content="Comida, Restaurantes, Restaurantes rio">
+		<link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container home" aria-label="Restaurate Le Scone">
+      <div class="home__div grid-5">
+        <img src="./img/lescone.png" alt="Le Scone" class="home__logo" />
+        <div class="home__detail">
+          <h1 class="home__title" title="Horário de atendimento">
+            De Seg. à Sab. <span class="open"></span><br />das 07:00h às 18:00h
+          </h1>
+          <address>
+            <p>Praia de Botafogo, 300 <br> Rio de Janeiro - RJ</p>
+          </address>
+        </div>
+				<p class="home__number">+55 021 2412-3333</p>
+      </div>
+        <img class="home__img grid-7" src="./img/foto.png" alt="Chefe de cozinha cozinhando" />
+    </main>
+    <section class="container menu">
+			<h1 class="title grid-5">Menu</h1>
+			<article class="menu__list grid-7">
+				<div class="menu__container">
+					<h2>Entradas</h2>
+					<div class="menu__flex">
+						<ul>
+							<li><span class="menu__price">R$1,70</span> <strong class="menu__food">Ovos Mexidos</strong></li>
+							<li><span class="menu__price">R$2,70</span> <strong class="menu__food">Scones de Frutas</strong></li>
+							<li><span class="menu__price">R$1,70</span> <strong class="menu__food">Joelho de Queijo</strong></li>
+							<li><span class="menu__price">R$1,70</span> <strong class="menu__food">Presunto Cozido</strong></li>
+							<li><span class="menu__price">R$1,70</span> <strong class="menu__food">Coxinha de Presunto</strong></li>
+						</ul>
+						<img src="./img/prato-1.png" alt="Lindo prato colorido" class="menu__dish">
+					</div>
+				</div>
+				<div class="menu__container">
+					<h2>Pratos Principais</h2>
+					<div class="menu__flex">
+						<ul>
+							<li><span class="menu__price">R$10,70</span> <strong class="menu__food">Misto Quente</strong></li>
+							<li><span class="menu__price">R$76,20</span> <strong class="menu__food">Arado</strong></li>
+							<li><span class="menu__price">R$22,40</span> <strong class="menu__food">Strognoff de Carnes Nobres</strong></li>
+							<li><span class="menu__price">R$12,10</span> <strong class="menu__food">Strognoff Simples</strong></li>
+							<li><span class="menu__price">R$58,70</span> <strong class="menu__food">Lasanha de Porco</strong></li>
+						</ul>
+						<img src="./img/prato-2.png" alt="Hamburguer com bacon e cheedar" class="menu__dish">
+					</div>
+				</div>
+			</article>
+		</section>
+
+		<section class="container contact">
+			<h1 class="title grid-5">Contato</h1>
+			<form class="grid-7">
+				<label for="name">Nome</label>
+				<input type="text" id="name" name="name">
+				<div class="form__grid">
+					<div class="grid-8">
+						<label for="email">E-mail</label>
+						<input type="email" id="email" name="email">
+					</div>
+					<div class="grid-4">
+						<label for="phone">Telefone</label>
+						<input type="tel" id="phone" name="phone">
+					</div>
+				</div>
+				<label for="mensage">Mensagem</label>
+				<textarea name="mensage" id="mensage" cols="30" rows="10"></textarea>
+				<button type="submit">Enviar</button>
+			</form>
+			<address class="contact__address grid-12">
+				<a href="mailto:marcosvinmaximo@gmail.com">marcosvinmaximo@gmail.com ///</a>
+				<a href="telto:+5541984507415">+55 (41) 98450-7415 ///</a>
+				<map name="rio"><img src="./img/map.png" alt="mapa do rio"></map>
+			</address>
+		</section>
+		<footer class="footer">
+			<p class="footer__copy">Le Scone &copy; 1897 - 2022. Alguns direitos reservados.</p>
+			<img src="./img/lescone-icone.png" alt="logo">
+		</footer>
+  </body>
+</html>

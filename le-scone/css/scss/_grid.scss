@@ -1,0 +1,87 @@
+// variaveis de grid
+$cols: 12;
+$gutter: 20px;
+$b-device: 1200px;
+$m-device: 748px;
+$s-device: 480px;
+
+// Mixin media-queries
+
+@mixin d($size) {
+  @if $size == l {
+    @media screen and (min-width: #{$b-device}) {
+      @content;
+    }
+  } @else if $size == m {
+    @media screen and (min-width: #{$m-device}) and (max-width: #{$b-device - 1}) {
+      @content;
+    }
+  } @else if $size == s {
+    @media screen and (max-width: #{$m-device - 1}) {
+      @content;
+    }
+  }
+}
+
+@mixin grid {
+  @include d(l) {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: repeat($cols, 1fr);
+  }
+  @include d(m) {
+    display: grid;
+    gap: $gutter;
+    grid-template-columns: 1fr 2fr;
+  }
+  @include d(s) {
+    display: grid;
+    grid-template-columns: auto;
+    gap: $gutter / 2;
+  }
+}
+
+@for $i from 1 through $cols {
+  .grid-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+@mixin set-column($place){
+  grid-column: $place;
+}
+
+@mixin grid-struture($column: initial) {
+  @include d(m) {
+    grid-column: $column;
+  }
+  @include d(s) {
+    grid-column: $column;
+  }
+}
+
+[class*="grid-"] {
+  @include grid-struture;
+}
+
+@mixin container {
+  max-width: $b-device;
+  margin: 0 auto;
+  position: relative;
+  @include d(m) {
+    padding: 10px 20px;
+  }
+  @include d(s) {
+    max-width: $s-device;
+    padding: 5px 10px;
+  }
+}
+
+.container {
+  padding: 50px 20px;
+  @include container;
+  @include grid;
+  @include d(s) {
+    padding: 25px 15px;
+  }
+}
