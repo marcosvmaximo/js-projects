@@ -1,0 +1,41 @@
+/* Accordin List */
+
+.js [data-anime="accordion"] dd{
+  display: none;
+}
+
+.js [data-anime="accordion"] dd.ativo{
+  display: block;
+  animation: showList .5s forwards;
+}
+
+@keyframes showList {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 250px;
+  }
+}
+
+.js [data-anime="accordion"] dt {
+  cursor: pointer;
+}
+
+.js [data-anime="accordion"] dt:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url('../img/arrow-red.svg') no-repeat center center;
+  margin-left: 5px;
+  transform: rotate(90deg);
+  transition: transform .3s ease;
+}
+
+.js [data-anime="accordion"] dt.ativado:after{
+  content: '';
+  transform: rotate(-90deg);
+}
