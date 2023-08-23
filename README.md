@@ -30,9 +30,11 @@ O projeto **Password Generator** tem como objetivo criar senhas seguras de forma
 4. **Cópia da Senha:**
    - A função `copyPassword` copia a senha usando `navigator.clipboard.writeText`.
    - Após a cópia, uma mensagem é exibida na área da senha.
+     
 <br>
 <hr>
 <br>
+
 **Executando o Projeto Localmente:**
 1. Abra o arquivo HTML em um navegador.
 2. Use o controle deslizante para definir o tamanho da senha.
